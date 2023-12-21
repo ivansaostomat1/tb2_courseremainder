@@ -1,3 +1,5 @@
+// lib/features/info_screens.dart
+
 import 'package:flutter/material.dart';
 import 'package:tb2/model/student.dart';
 import 'package:hive_flutter/hive_flutter.dart';
