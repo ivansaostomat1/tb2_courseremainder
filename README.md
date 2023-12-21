@@ -1,6 +1,7 @@
-# tb2
+# tb2 pemrogramman mobile
 
-A new Flutter project.
+MOCHAMMAD IRFAN KURNIAWAN
+41822010028
 
 ## Getting Started
 
