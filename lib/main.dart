@@ -1,35 +1,27 @@
-// lib/main.dart
 import 'package:flutter/material.dart';
-import 'package:tb2/model/student.dart';
+import 'package:hive/hive.dart';
 import 'package:hive_flutter/hive_flutter.dart';
-import 'features/info_screens.dart';
+import 'model/student.dart';
+import 'package:tb2/features/home.dart';
 
-main() async {
+void main() async {
   await Hive.initFlutter();
   Hive.registerAdapter(StudentAdapter());
-  await Hive.openBox('student_db');
+  await Hive.openBox<Student>('students');
+
   runApp(MyApp());
 }
-class MyApp extends StatefulWidget {
-  @override
-  _MyAppState createState() => _MyAppState();
-}
-class _MyAppState extends State<MyApp> {
-  @override
-  void dispose() {
-    Hive.close();
-    super.dispose();
-  }
 
+class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Course Remainder',
+      title: 'Course Reminder',
       theme: ThemeData(
         primarySwatch: Colors.indigo,
       ),
+      home: HomeScreen(),
       debugShowCheckedModeBanner: false,
-      home: InfoScreen(),
     );
   }
 }
